@@ -1,5 +1,6 @@
 // Reset
-@import 'reset/reset';
+@import 'reset/reset',
+'reset/base';
 
 // Fonts
 @import 'fonts/fonts';
@@ -11,4 +12,5 @@
 // Components 
 @import 'components/grid',
 'components/search',
+'components/modal',
 'components/pagination';

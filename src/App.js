@@ -3,6 +3,7 @@ import axios from "axios";
 import "./CSS/App.css";
 import Grid from "./components/Grid";
 import SearchPokemon from "./components/Search";
+import PokemonModal from "./components/Modal";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -66,6 +67,7 @@ function App() {
 					<h1>Pokemon API App</h1>
 					<main>
 						<SearchPokemon getPokemon={getPokemon} />
+						<PokemonModal singlePokemonData={singlePokemon} />
 						<Grid pokemonArr={pokemon} />
 					</main>
 					<div className="pagination">

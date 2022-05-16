@@ -15,25 +15,27 @@ const SearchPokemon = ({ getPokemon }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className="search">
-			<p>Enter Pokemon Name</p>
-			<div className="search__container">
-				<input
-					type="text"
-					onChange={handleChange}
-					value={value}
-					placeholder="pikachu.."
-					className="search__input"
-				/>
-				<button
-					type="submit"
-					className="search__button"
-					disabled={value == "" ? true : false}
-				>
-					Search
-				</button>
-			</div>
-		</form>
+		<>
+			<form onSubmit={handleSubmit} className="search">
+				<p>Enter Pokemon Name</p>
+				<div className="search__container">
+					<input
+						type="text"
+						onChange={handleChange}
+						value={value}
+						placeholder="pikachu.."
+						className="search__input"
+					/>
+					<button
+						type="submit"
+						className="search__button"
+						disabled={value == "" ? true : false}
+					>
+						Search
+					</button>
+				</div>
+			</form>
+		</>
 	);
 };
 

@@ -72,6 +72,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+main {
+  position: relative;
+}
+
 @font-face {
   font-family: "PokemonHollow";
   src: url("../fonts/Pokemon_Hollow.ttf");
