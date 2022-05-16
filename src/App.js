@@ -6,11 +6,17 @@ import Card from "./components/Card";
 function App() {
 	const [loading, setLoading] = useState(true);
 	const [pokemon, setPokemon] = useState([]);
+	const [url, setUrl] = useState(["https://pokeapi.co/api/v2/pokemon/"]);
+	const [nextUrl, setNextUrl] = useState();
+	const [prevUrl, setPrevUrl] = useState();
 
 	const getPokemonData = async () => {
 		setLoading(true);
-		const res = await axios.get("https://pokeapi.co/api/v2/pokemon/");
+		const res = await axios.get(url);
+		// console.log(res);
 		setPokemonData(res.data.results);
+		setNextUrl(res.data.next);
+		setPrevUrl(res.data.previous);
 		setLoading(false);
 	};
 
@@ -27,7 +33,7 @@ function App() {
 
 	useEffect(() => {
 		getPokemonData();
-	}, []);
+	}, [url]);
 
 	if (loading) return "Loading...";
 
@@ -43,7 +49,9 @@ function App() {
 						<button
 							type="button"
 							onClick={() => {
-								console.log("clicked prev");
+								// console.log("clicked prev");
+								setPokemon([]);
+								setUrl(prevUrl);
 							}}
 						>
 							Previous
@@ -51,7 +59,9 @@ function App() {
 						<button
 							type="button"
 							onClick={() => {
-								console.log("clicked next");
+								// console.log("clicked next");
+								setPokemon([]);
+								setUrl(nextUrl);
 							}}
 						>
 							Next
