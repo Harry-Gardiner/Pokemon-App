@@ -168,6 +168,7 @@ p {
 }
 .card__info__id {
   color: rgba(0, 0, 0, 0.5019607843);
+  font-weight: bold;
 }
 .card__info__name {
   text-transform: capitalize;
@@ -241,6 +242,37 @@ p {
 .card__sprite {
   display: flex;
   justify-content: center;
+}
+
+.search {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+}
+.search__container {
+  display: flex;
+  justify-content: space-between;
+}
+.search__input {
+  background-color: rgb(235, 235, 235);
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 70%;
+  margin-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+.search__input:focus-visible {
+  border: 2px solid #B3A125;
+  outline: none;
+}
+.search__button {
+  width: 150px;
+  border-radius: 5px;
+  height: 35px;
+  border: 1px solid gray;
+}
+.search__button:hover:enabled {
+  border: 2px solid #B3A125;
 }
 
 .pagination {
