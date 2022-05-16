@@ -1,0 +1,21 @@
+.pagination {
+    display: flex;
+    justify-content: space-evenly;
+    margin: $gap-lg auto;
+
+    button {
+        padding: $gap-xs;
+        color: $red-secondary;
+        background-color: $white;
+        border: 2px solid $blue;
+        border-radius: 5px;
+        width: 125px;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $blue;
+            transform: scale(1.1);
+            color: $red-primary;
+        }
+    }
+}

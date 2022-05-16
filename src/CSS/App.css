@@ -242,3 +242,23 @@ p {
   display: flex;
   justify-content: center;
 }
+
+.pagination {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3rem auto;
+}
+.pagination button {
+  padding: 0.5rem;
+  color: #CC0000;
+  background-color: #ffffff;
+  border: 2px solid #3B4CCA;
+  border-radius: 5px;
+  width: 125px;
+  transition: 0.3s;
+}
+.pagination button:hover {
+  background-color: #3B4CCA;
+  transform: scale(1.1);
+  color: #FF0000;
+}
