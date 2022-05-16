@@ -2,14 +2,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./CSS/App.css";
 import Grid from "./components/Grid";
+import SearchPokemon from "./components/Search";
 
 function App() {
 	const [loading, setLoading] = useState(true);
 	const [pokemon, setPokemon] = useState([]);
+	const [singlePokemon, setSinglePokemon] = useState();
 	const [url, setUrl] = useState(["https://pokeapi.co/api/v2/pokemon/"]);
 	const [nextUrl, setNextUrl] = useState();
 	const [prevUrl, setPrevUrl] = useState();
 
+	// Get Pokemon data
 	const getPokemonData = async () => {
 		setLoading(true);
 		const res = await axios.get(url);
@@ -20,6 +23,7 @@ function App() {
 		setLoading(false);
 	};
 
+	// Set Pokemon to mappable array
 	const setPokemonData = async (res) => {
 		res.map(async (item) => {
 			const result = await axios.get(item.url);
@@ -31,6 +35,16 @@ function App() {
 		});
 	};
 
+	// Get a searched for pokemon
+	const getPokemon = async (name) => {
+		const singleRes = await axios.get(
+			`https://pokeapi.co/api/v2/pokemon/${name}`
+		);
+		console.log(singleRes.data);
+		setSinglePokemon(singleRes.data);
+	};
+
+	// Run function each time URL is changed
 	useEffect(() => {
 		getPokemonData();
 	}, [url]);
@@ -43,7 +57,8 @@ function App() {
 				<div className="col-12">
 					<h1>Pokemon API App</h1>
 					<main>
-						<Grid pokemonArr={pokemon}></Grid>
+						<SearchPokemon getPokemon={getPokemon} />
+						<Grid pokemonArr={pokemon} />
 					</main>
 					<div className="pagination">
 						<button
