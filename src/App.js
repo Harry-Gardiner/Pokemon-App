@@ -39,6 +39,10 @@ function App() {
 					<main>
 						<Card pokemonArr={pokemon}></Card>
 					</main>
+					<div className="pagination">
+						<button>Previous</button>
+						<button>Next</button>
+					</div>
 				</div>
 			</div>
 		);
