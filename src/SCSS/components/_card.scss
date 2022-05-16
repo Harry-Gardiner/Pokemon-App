@@ -38,7 +38,7 @@
         background-color: #91d8df;
     }
     
-    &.lighting {
+    &.fighting {
         background-color: #f56767;
     }
     
@@ -138,7 +138,7 @@
                 }
                 
                 &.lighting {
-                    background-color: $lighting;
+                    background-color: $fighting;
                 }
                 
                 &.poison {

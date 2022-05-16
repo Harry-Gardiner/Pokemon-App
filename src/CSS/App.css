@@ -123,7 +123,7 @@ p {
 .card.ice {
   background-color: #91d8df;
 }
-.card.lighting {
+.card.fighting {
   background-color: #f56767;
 }
 .card.poison {
@@ -241,4 +241,26 @@ p {
 .card__sprite {
   display: flex;
   justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3rem auto;
+}
+.pagination button {
+  padding: 0.5rem;
+  color: #CC0000;
+  background-color: #ffffff;
+  border: 2px solid #3B4CCA;
+  border-radius: 5px;
+  width: 125px;
+}
+.pagination button:hover:enabled {
+  background-color: #3B4CCA;
+  transform: scale(1.05);
+  color: #FF0000;
+}
+.pagination button:disabled {
+  opacity: 0.3;
 }

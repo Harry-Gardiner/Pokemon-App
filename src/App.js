@@ -6,11 +6,17 @@ import Card from "./components/Card";
 function App() {
 	const [loading, setLoading] = useState(true);
 	const [pokemon, setPokemon] = useState([]);
+	const [url, setUrl] = useState(["https://pokeapi.co/api/v2/pokemon/"]);
+	const [nextUrl, setNextUrl] = useState();
+	const [prevUrl, setPrevUrl] = useState();
 
 	const getPokemonData = async () => {
 		setLoading(true);
-		const res = await axios.get("https://pokeapi.co/api/v2/pokemon/");
+		const res = await axios.get(url);
+		// console.log(res);
 		setPokemonData(res.data.results);
+		setNextUrl(res.data.next);
+		setPrevUrl(res.data.previous);
 		setLoading(false);
 	};
 
@@ -27,7 +33,9 @@ function App() {
 
 	useEffect(() => {
 		getPokemonData();
-	}, []);
+	}, [url]);
+
+	console.log(prevUrl);
 
 	if (loading) return "Loading...";
 
@@ -39,6 +47,30 @@ function App() {
 					<main>
 						<Card pokemonArr={pokemon}></Card>
 					</main>
+					<div className="pagination">
+						<button
+							type="button"
+							onClick={() => {
+								// console.log("clicked prev");
+								setPokemon([]); // Reset pokemon data
+								setUrl(prevUrl);
+							}}
+							disabled={prevUrl === null ? true : false}
+						>
+							Previous
+						</button>
+						<button
+							type="button"
+							onClick={() => {
+								// console.log("clicked next");
+								setPokemon([]); // Reset pokemon data
+								setUrl(nextUrl);
+							}}
+							disabled={nextUrl === null ? true : false}
+						>
+							Next
+						</button>
+					</div>
 				</div>
 			</div>
 		);
