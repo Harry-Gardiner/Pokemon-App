@@ -168,6 +168,7 @@ p {
 }
 .card__info__id {
   color: rgba(0, 0, 0, 0.5019607843);
+  font-weight: bold;
 }
 .card__info__name {
   text-transform: capitalize;
