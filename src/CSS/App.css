@@ -163,6 +163,10 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  color: #ffffff;
+}
+.card__info__id {
+  color: rgba(0, 0, 0, 0.5019607843);
 }
 .card__info__name {
   text-transform: capitalize;

@@ -1,14 +1,14 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: $gap-md;
 }
 
 .card {
     height: 140px; 
     flex-direction: row;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: $gap-xs $gap-sm;
     background-image: url(../assets/images/watermark-pokeball.svg);
     background-repeat: no-repeat;
     background-position: center right;
@@ -90,6 +90,11 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        color: $white;
+
+        &__id {
+            color: #00000080;
+        }
 
         &__name {
             text-transform: capitalize;
@@ -97,10 +102,10 @@
 
         &__types {
             display: flex;
-            padding-top: 1rem;
+            padding-top: $gap-sm;
 
             &__type {
-                margin-right: 1rem;
+                margin-right: $gap-sm;
                 padding: 0.5rem;
                 border-radius: 5px;
                 text-transform: capitalize;
