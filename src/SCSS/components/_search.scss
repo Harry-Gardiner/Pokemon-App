@@ -1,0 +1,36 @@
+.search {
+    margin: $gap-md auto;
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__input {
+        background-color: rgb(235, 235, 235);
+        border: 1px solid gray;
+        border-radius: 5px;
+        width: 70%;
+        margin-right: $gap-xs;
+        padding-left: $gap-xs;
+        
+        &:focus-visible {
+            border: 2px solid $yellow-secondary;
+            outline: none;
+        }
+    }
+
+    &__button {
+        width: 150px;
+        border-radius: 5px;
+        height: 35px;
+        border: 1px solid gray;
+
+        &:hover {
+            border: 2px solid $yellow-secondary;
+        }
+    }
+
+}

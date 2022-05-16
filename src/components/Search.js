@@ -16,14 +16,19 @@ const SearchPokemon = ({ getPokemon }) => {
 
 	return (
 		<form onSubmit={handleSubmit} className="search">
-			<label className="search__label">Enter Pokemon Name</label>
-			<input
-				type="text"
-				onChange={handleChange}
-				value={value}
-				placeholder="pikachu.."
-				className="search__input"
-			/>
+			<p>Enter Pokemon Name</p>
+			<div className="search__container">
+				<input
+					type="text"
+					onChange={handleChange}
+					value={value}
+					placeholder="pikachu.."
+					className="search__input"
+				/>
+				<button type="submit" className="search__button">
+					Search
+				</button>
+			</div>
 		</form>
 	);
 };
