@@ -50,7 +50,7 @@ function App() {
 							type="button"
 							onClick={() => {
 								// console.log("clicked prev");
-								setPokemon([]);
+								setPokemon([]); // Reset pokemon data
 								setUrl(prevUrl);
 							}}
 						>
@@ -60,7 +60,7 @@ function App() {
 							type="button"
 							onClick={() => {
 								// console.log("clicked next");
-								setPokemon([]);
+								setPokemon([]); // Reset pokemon data
 								setUrl(nextUrl);
 							}}
 						>
