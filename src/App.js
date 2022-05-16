@@ -40,8 +40,22 @@ function App() {
 						<Card pokemonArr={pokemon}></Card>
 					</main>
 					<div className="pagination">
-						<button>Previous</button>
-						<button>Next</button>
+						<button
+							type="button"
+							onClick={() => {
+								console.log("clicked prev");
+							}}
+						>
+							Previous
+						</button>
+						<button
+							type="button"
+							onClick={() => {
+								console.log("clicked next");
+							}}
+						>
+							Next
+						</button>
 					</div>
 				</div>
 			</div>
