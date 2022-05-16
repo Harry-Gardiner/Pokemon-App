@@ -35,6 +35,8 @@ function App() {
 		getPokemonData();
 	}, [url]);
 
+	console.log(prevUrl);
+
 	if (loading) return "Loading...";
 
 	if (pokemon.length > 1)
@@ -53,6 +55,7 @@ function App() {
 								setPokemon([]); // Reset pokemon data
 								setUrl(prevUrl);
 							}}
+							disabled={prevUrl === null ? true : false}
 						>
 							Previous
 						</button>
@@ -63,6 +66,7 @@ function App() {
 								setPokemon([]); // Reset pokemon data
 								setUrl(nextUrl);
 							}}
+							disabled={nextUrl === null ? true : false}
 						>
 							Next
 						</button>

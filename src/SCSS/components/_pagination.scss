@@ -10,12 +10,15 @@
         border: 2px solid $blue;
         border-radius: 5px;
         width: 125px;
-        transition: 0.3s;
 
-        &:hover {
+        &:hover:enabled {
             background-color: $blue;
-            transform: scale(1.1);
+            transform: scale(1.05);
             color: $red-primary;
+        }
+
+        &:disabled {
+            opacity: 0.3;  
         }
     }
 }
