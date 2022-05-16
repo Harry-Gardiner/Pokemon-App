@@ -37,16 +37,17 @@ function App() {
 
 	// Get a searched for pokemon
 	const getPokemon = async (name) => {
-		try {
-			const singleRes = await axios.get(
-				`https://pokeapi.co/api/v2/pokemon/${name}`
-			);
-			console.log(singleRes.data);
-			setSinglePokemon(singleRes.data);
-		} catch (error) {
-			console.log(error.response.data.error);
-			alert(`Pokemon ${name} not Found. Please check spelling`);
-		}
+		if (!name == "")
+			try {
+				const singleRes = await axios.get(
+					`https://pokeapi.co/api/v2/pokemon/${name}`
+				);
+				console.log(singleRes.data);
+				setSinglePokemon(singleRes.data);
+			} catch (error) {
+				console.log(error.response.data.error);
+				alert(`Pokemon ${name} not Found. Please check spelling`);
+			}
 	};
 
 	// Run function each time URL is changed

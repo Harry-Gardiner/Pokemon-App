@@ -25,7 +25,11 @@ const SearchPokemon = ({ getPokemon }) => {
 					placeholder="pikachu.."
 					className="search__input"
 				/>
-				<button type="submit" className="search__button">
+				<button
+					type="submit"
+					className="search__button"
+					disabled={value == "" ? true : false}
+				>
 					Search
 				</button>
 			</div>

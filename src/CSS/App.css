@@ -271,7 +271,7 @@ p {
   height: 35px;
   border: 1px solid gray;
 }
-.search__button:hover {
+.search__button:hover:enabled {
   border: 2px solid #B3A125;
 }
 
