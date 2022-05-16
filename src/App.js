@@ -35,8 +35,6 @@ function App() {
 		getPokemonData();
 	}, [url]);
 
-	console.log(prevUrl);
-
 	if (loading) return "Loading...";
 
 	if (pokemon.length > 1)
