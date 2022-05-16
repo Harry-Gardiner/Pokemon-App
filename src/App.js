@@ -7,7 +7,7 @@ import SearchPokemon from "./components/Search";
 function App() {
 	const [loading, setLoading] = useState(true);
 	const [pokemon, setPokemon] = useState([]);
-	const [singlePokemon, setSinglePokemon] = useState();
+	const [singlePokemon, setSinglePokemon] = useState({});
 	const [url, setUrl] = useState(["https://pokeapi.co/api/v2/pokemon/"]);
 	const [nextUrl, setNextUrl] = useState();
 	const [prevUrl, setPrevUrl] = useState();
@@ -42,7 +42,7 @@ function App() {
 				const singleRes = await axios.get(
 					`https://pokeapi.co/api/v2/pokemon/${name}`
 				);
-				console.log(singleRes.data);
+				// console.log(singleRes);
 				setSinglePokemon(singleRes.data);
 			} catch (error) {
 				console.log(error.response.data.error);
@@ -54,6 +54,8 @@ function App() {
 	useEffect(() => {
 		getPokemonData();
 	}, [url]);
+
+	console.log(singlePokemon);
 
 	if (loading) return "Loading...";
 
