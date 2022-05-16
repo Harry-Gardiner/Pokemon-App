@@ -15,19 +15,23 @@ const Card = ({pokemonArr}) => {
 
                         return (
                             <div className="card" key={pokeId}>
-                                <small className="card__id">{pokeId}</small>
-                                <h2 className="card__name">{pokeName}</h2>
-                                <img src={pokeSpirte} alt={pokeName} className="card__sprite"/>
-                                <div>
-                                    {
-                                        pokeTypes.map((item) => {
-                                            const pokeType = item.type.name;
+                                <div className="card__info col-7">
+                                    <small className="card__info__id">#{pokeId}</small>
+                                    <h2 className="card__info__name">{pokeName}</h2>
+                                    <div className="card__info__types">
+                                        {
+                                            pokeTypes.map((item) => {
+                                                const pokeType = item.type.name;
 
-                                            return (
-                                               <p className="card__type">{pokeType}</p> 
-                                            )
-                                        })
-                                    }
+                                                return (
+                                                <p className="card__info__types__type">{pokeType}</p> 
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                                <div className="card__sprite col-5">
+                                    <img src={pokeSpirte} alt={pokeName} className="card__sprite__img"/>
                                 </div>
                             </div>
                         )
