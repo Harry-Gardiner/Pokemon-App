@@ -11,7 +11,7 @@ function App() {
 
 		axios.get("https://pokeapi.co/api/v2/pokemon/").then((res) => {
 			setLoading(false);
-			setPokemon(res.data.results.map((pokemon) => pokemon.name));
+			setPokemon(res.data.results);
 		});
 	}, []);
 
@@ -22,7 +22,7 @@ function App() {
 	return (
 		<div className="App container">
 			<main className="col-12">
-				<h1>Content</h1>
+				<h1>Pokemon API App</h1>
 			</main>
 		</div>
 	);
