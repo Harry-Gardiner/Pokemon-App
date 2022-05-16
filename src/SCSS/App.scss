@@ -5,4 +5,8 @@
 @import 'fonts/fonts';
 
 // Variables
-@import 'variables/colours';
+@import 'variables/colours',
+'variables/spacing';
+
+// Components 
+@import 'components/card';
