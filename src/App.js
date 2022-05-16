@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./CSS/App.css";
-import Card from "./components/Card";
+import Grid from "./components/Grid";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -43,7 +43,7 @@ function App() {
 				<div className="col-12">
 					<h1>Pokemon API App</h1>
 					<main>
-						<Card pokemonArr={pokemon}></Card>
+						<Grid pokemonArr={pokemon}></Grid>
 					</main>
 					<div className="pagination">
 						<button
