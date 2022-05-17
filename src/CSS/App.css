@@ -264,6 +264,97 @@ p {
   justify-content: center;
 }
 
+.pokemon-single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  max-width: 300px;
+  background-image: url(../assets/images/watermark-pokeball.svg);
+  background-repeat: space;
+  background-position: left;
+}
+.pokemon-single.grass {
+  background-color: #8bbe8a;
+}
+.pokemon-single.normal {
+  background-color: #b5b9c4;
+}
+.pokemon-single.fire {
+  background-color: #ffa756;
+}
+.pokemon-single.water {
+  background-color: #58abf6;
+}
+.pokemon-single.electric {
+  background-color: #f2cb55;
+}
+.pokemon-single.ice {
+  background-color: #91d8df;
+}
+.pokemon-single.fighting {
+  background-color: #f56767;
+}
+.pokemon-single.poison {
+  background-color: #9f6e97;
+}
+.pokemon-single.ground {
+  background-color: #f78551;
+}
+.pokemon-single.flying {
+  background-color: #eba8c3;
+}
+.pokemon-single.psychic {
+  background-color: #ff6568;
+}
+.pokemon-single.bug {
+  background-color: #8bd674;
+}
+.pokemon-single.rock {
+  background-color: #6f6e78;
+}
+.pokemon-single.ghost {
+  background-color: #8571be;
+}
+.pokemon-single.dragon {
+  background-color: #7383b9;
+}
+.pokemon-single.dark {
+  background-color: #806d61;
+}
+.pokemon-single.steel {
+  background-color: #a1a1a5;
+}
+.pokemon-single.fairy {
+  background-color: #d6a1bb;
+}
+.pokemon-single__name {
+  text-transform: capitalize;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+.pokemon-single__sprite {
+  width: 85px;
+  height: 85px;
+  margin-bottom: 0.5rem;
+}
+.pokemon-single__stat-title {
+  align-self: flex-start;
+  color: #ffffff;
+}
+.pokemon-single__stats__container {
+  align-self: flex-start;
+}
+.pokemon-single__stats__stat {
+  color: #ffffff;
+}
+.pokemon-single__stats__value {
+  color: #3B4CCA;
+}
+
 .search {
   margin: 2rem auto;
   display: flex;
@@ -428,6 +519,9 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.compare__container .vs img {
+  min-width: 100px;
 }
 
 .pagination {

@@ -1,0 +1,48 @@
+.pokemon-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    padding: $gap-xs;
+    border-radius: 5px;
+    @include pokemonType;
+    max-width: 300px;
+    background-image: url(../assets/images/watermark-pokeball.svg);
+    background-repeat:space;
+    background-position: left;
+
+    &__name {
+        text-transform: capitalize;
+        // font-family: 'PokemonSolid';
+        color: $white;
+        margin-bottom: $gap-xs;
+    }
+
+    &__sprite {
+        width: 85px;
+        height: 85px;
+        margin-bottom: $gap-xs;
+    }
+
+    &__stat-title {
+        align-self: flex-start;
+        color: $white;
+    }
+
+    &__stats {
+
+        &__container {
+            align-self: flex-start;
+        }
+      
+
+        &__stat {
+            color: $white;
+        }
+
+        &__value {
+            color: $blue;
+        }
+    }
+}
