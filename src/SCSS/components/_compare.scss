@@ -1,0 +1,14 @@
+.compare {
+    margin: $gap-md auto;
+
+    &__container {
+        margin-top: $gap-sm;
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
