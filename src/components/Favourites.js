@@ -10,8 +10,9 @@ const Favourites = ({ favs }) => {
 			<div className="fav__container">
 				{favs.map((pokemon) => {
 					return (
-						<div className="fav__container_pokemon" key={makeid()}>
+						<div className="fav__container__pokemon" key={makeid()}>
 							<img src={pokemon.sprites.front_default} alt={pokemon.name} />
+							<small>{pokemon.name}</small>
 						</div>
 					);
 				})}

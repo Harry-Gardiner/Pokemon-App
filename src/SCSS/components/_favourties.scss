@@ -1,0 +1,20 @@
+.fav {
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__pokemon {
+            text-align: center;
+
+            img {
+                width: 80px;
+            }
+
+            small {
+                font-family: 'Pokemonsolid';
+                color: $yellow-secondary;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
