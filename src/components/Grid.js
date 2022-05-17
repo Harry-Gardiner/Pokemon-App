@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { makeid } from "../functions/functions";
 
-const Card = ({ pokemonArr, addFav, favs }) => {
+const Card = ({ pokemonArr, addFav, favs, addCompare, compare }) => {
 	// Extract ids from favs array in order to set fav star colour
 	let clickedArr = favs.map((a) => a.id);
 	const [clicked, setClicked] = useState(clickedArr);
+	let compareArr = compare.map((a) => a.id);
+	const [selected, setSeleted] = useState(compare);
 	// console.log(pokemonArr);
 	// console.log(clicked);
 	// console.log(clickedArr);
@@ -22,20 +24,47 @@ const Card = ({ pokemonArr, addFav, favs }) => {
 							<div className="card__info col-8">
 								<div className="d-flex align-items-center">
 									<small className="card__info__id"># {pokeId}</small>
-									<img
-										src={
-											clicked.includes(pokeId)
-												? require("../assets/images/star-png-min.png")
-												: require("../assets/images/star-hollow.png")
-										}
-										alt="holow star"
+									<button
+										className="btn-stripped"
 										onClick={() => {
 											// console.log("clicked");
 											addFav(pokeId);
 											setClicked([...clicked, pokeId]);
 										}}
-										className="card__info__fav"
-									/>
+									>
+										<img
+											src={
+												clicked.includes(pokeId)
+													? require("../assets/images/star-png-min.png")
+													: require("../assets/images/star-hollow.png")
+											}
+											alt="holow star"
+											className="card__info__fav"
+										/>
+									</button>
+									<button
+										className="btn-stripped"
+										disabled={
+											compare.length > 1 && !selected.includes(pokeId)
+												? true
+												: false
+										}
+										onClick={() => {
+											// console.log("clicked");
+											addCompare(pokeId);
+											setSeleted([...selected, pokeId]);
+										}}
+									>
+										<img
+											src={
+												compareArr.includes(pokeId)
+													? require("../assets/images/closed-pokeball-min.png")
+													: require("../assets/images/open-pokeball-min.png")
+											}
+											alt=""
+											className="card__info__fav"
+										/>
+									</button>
 								</div>
 								<h3 className="card__info__name">{pokeName}</h3>
 								<div className="card__info__types">

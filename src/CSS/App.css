@@ -76,6 +76,11 @@ main {
   position: relative;
 }
 
+.btn-stripped {
+  border: none;
+  background: none;
+}
+
 @font-face {
   font-family: "PokemonHollow";
   src: url("../fonts/Pokemon_Hollow.ttf");
@@ -171,6 +176,12 @@ p {
   justify-content: space-evenly;
   color: #ffffff;
 }
+.card__info .btn-stripped:hover:enabled {
+  transform: scale(1.1);
+}
+.card__info .btn-stripped:disabled {
+  opacity: 0.5;
+}
 .card__info__id {
   color: rgba(0, 0, 0, 0.5019607843);
   font-weight: bold;
@@ -178,9 +189,6 @@ p {
 .card__info__fav {
   width: 25px;
   margin-left: 0.5rem;
-}
-.card__info__fav:hover {
-  transform: scale(1.1);
 }
 .card__info__name {
   text-transform: capitalize;

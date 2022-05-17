@@ -1,6 +1,7 @@
 import React from "react";
 
-const ComparePokemon = () => {
+const ComparePokemon = ({ compare }) => {
+	console.log(compare);
 	return (
 		<div className="compare">
 			<h2>Compare Pokemon</h2>

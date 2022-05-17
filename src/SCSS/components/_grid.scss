@@ -22,18 +22,24 @@
         justify-content: space-evenly;
         color: $white;
 
+        .btn-stripped {
+            &:hover:enabled {
+                transform: scale(1.1);
+            }  
+            
+            &:disabled {
+                opacity: 0.5;
+            }
+        }
+
         &__id {
             color: #00000080;
             font-weight: bold;
         }
-
+        
         &__fav {
             width: 25px;
-            margin-left: $gap-xs;
-
-            &:hover {
-                transform: scale(1.1);
-            }
+            margin-left: $gap-xs;       
         }
 
         &__name {

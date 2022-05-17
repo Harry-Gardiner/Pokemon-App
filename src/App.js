@@ -21,6 +21,7 @@ function App() {
 		const initialValue = JSON.parse(saved);
 		return initialValue || [];
 	});
+	const [compare, setCompare] = useState([]);
 
 	// Get Pokemon data
 	const getPokemonData = async () => {
@@ -73,9 +74,15 @@ function App() {
 		// console.log(data);
 		setFavs([...favs, data]);
 	};
-
 	// console.log(favs);
 	// console.log(favs.length);
+
+	// Handler to add pokemon for comparison
+	const addToComapre = (id) => {
+		const data = pokemon.find((item) => item.id === id);
+		// console.log(data);
+		setCompare([...compare, data]);
+	};
 
 	// Run function each time URL is changed
 	useEffect(() => {
@@ -99,7 +106,7 @@ function App() {
 
 						<Favourites favs={favs} />
 
-						<ComparePokemon />
+						<ComparePokemon compare={compare} />
 
 						{Object.keys(singlePokemon).length !== 0 && showModal ? (
 							<PokemonModal
@@ -108,7 +115,13 @@ function App() {
 							/>
 						) : null}
 
-						<Grid pokemonArr={pokemon} addFav={addToFavorite} favs={favs} />
+						<Grid
+							pokemonArr={pokemon}
+							addCompare={addToComapre}
+							compare={compare}
+							addFav={addToFavorite}
+							favs={favs}
+						/>
 
 						<div className="pagination">
 							<button
