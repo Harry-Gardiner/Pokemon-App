@@ -14,7 +14,12 @@ function App() {
 	const [nextUrl, setNextUrl] = useState();
 	const [prevUrl, setPrevUrl] = useState();
 	const [showModal, setShowModal] = useState(false);
-	const [favs, setFavs] = useState([]);
+	const [favs, setFavs] = useState(() => {
+		// getting local stored array
+		const saved = localStorage.getItem("Favpokemon");
+		const initialValue = JSON.parse(saved);
+		return initialValue || [];
+	});
 
 	// Get Pokemon data
 	const getPokemonData = async () => {
@@ -76,6 +81,11 @@ function App() {
 		getPokemonData();
 	}, [url]);
 
+	useEffect(() => {
+		// storing input name
+		localStorage.setItem("Favpokemon", JSON.stringify(favs));
+	}, [favs]);
+
 	if (loading) return "Loading...";
 
 	if (pokemon.length > 1)
@@ -95,7 +105,7 @@ function App() {
 							/>
 						) : null}
 
-						<Grid pokemonArr={pokemon} addFav={addToFavorite} />
+						<Grid pokemonArr={pokemon} addFav={addToFavorite} favs={favs} />
 
 						<div className="pagination">
 							<button

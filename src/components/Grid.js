@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { makeid } from "../functions/functions";
 
-const Card = ({ pokemonArr, addFav }) => {
-	const [clicked, setClicked] = useState([]);
+const Card = ({ pokemonArr, addFav, favs }) => {
+	// Extract ids from favs array in order to set fav star colour
+	let clickedArr = favs.map((a) => a.id);
+	const [clicked, setClicked] = useState(clickedArr);
 	// console.log(pokemonArr);
-	console.log(clicked);
+	// console.log(clicked);
+	// console.log(clickedArr);
 	return (
 		<>
 			<div className="grid">

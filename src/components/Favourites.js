@@ -2,7 +2,7 @@ import React from "react";
 import { makeid } from "../functions/functions";
 
 const Favourites = ({ favs }) => {
-	console.log(favs);
+	// console.log(favs);
 	return (
 		<div className="fav">
 			<h2>Favourites</h2>
