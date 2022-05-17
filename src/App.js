@@ -13,6 +13,7 @@ function App() {
 	const [nextUrl, setNextUrl] = useState();
 	const [prevUrl, setPrevUrl] = useState();
 	const [showModal, setShowModal] = useState(false);
+	const [favs, setFavs] = useState([]);
 
 	// Get Pokemon data
 	const getPokemonData = async () => {
@@ -59,6 +60,15 @@ function App() {
 		// console.log("clicked");
 	};
 
+	// Handler to add pokemon to favs
+	const addToFavorite = (id) => {
+		const data = pokemon.find((item) => item.id === id);
+		// console.log(data);
+		setFavs([...favs, data]);
+	};
+
+	console.log(favs);
+
 	// Run function each time URL is changed
 	useEffect(() => {
 		getPokemonData();
@@ -79,32 +89,32 @@ function App() {
 								setShowModal={handleModalState}
 							/>
 						) : null}
-						<Grid pokemonArr={pokemon} />
+						<Grid pokemonArr={pokemon} addFav={addToFavorite} />
+						<div className="pagination">
+							<button
+								type="button"
+								onClick={() => {
+									// console.log("clicked prev");
+									setPokemon([]); // Reset pokemon data
+									setUrl(prevUrl);
+								}}
+								disabled={prevUrl === null ? true : false}
+							>
+								Previous
+							</button>
+							<button
+								type="button"
+								onClick={() => {
+									// console.log("clicked next");
+									setPokemon([]); // Reset pokemon data
+									setUrl(nextUrl);
+								}}
+								disabled={nextUrl === null ? true : false}
+							>
+								Next
+							</button>
+						</div>
 					</main>
-					<div className="pagination">
-						<button
-							type="button"
-							onClick={() => {
-								// console.log("clicked prev");
-								setPokemon([]); // Reset pokemon data
-								setUrl(prevUrl);
-							}}
-							disabled={prevUrl === null ? true : false}
-						>
-							Previous
-						</button>
-						<button
-							type="button"
-							onClick={() => {
-								// console.log("clicked next");
-								setPokemon([]); // Reset pokemon data
-								setUrl(nextUrl);
-							}}
-							disabled={nextUrl === null ? true : false}
-						>
-							Next
-						</button>
-					</div>
 				</div>
 			</div>
 		);
