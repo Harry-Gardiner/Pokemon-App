@@ -1,8 +1,12 @@
 // Reset
-@import 'reset/reset';
+@import 'reset/reset',
+'reset/base';
 
 // Fonts
 @import 'fonts/fonts';
+
+// Mixins
+@import 'mixins/mixins';
 
 // Variables
 @import 'variables/colours',
@@ -11,4 +15,5 @@
 // Components 
 @import 'components/grid',
 'components/search',
+'components/modal',
 'components/pagination';

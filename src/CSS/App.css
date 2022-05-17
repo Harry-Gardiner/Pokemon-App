@@ -72,6 +72,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+main {
+  position: relative;
+}
+
 @font-face {
   font-family: "PokemonHollow";
   src: url("../fonts/Pokemon_Hollow.ttf");
@@ -83,6 +87,7 @@ select {
 h1 {
   font-family: "PokemonSolid", sans-serif;
   color: #B3A125;
+  letter-spacing: 2px;
 }
 
 p {
@@ -151,13 +156,13 @@ p {
   background-color: #7383b9;
 }
 .card.dark {
-  background-color: #705746;
+  background-color: #806d61;
 }
 .card.steel {
-  background-color: #B7B7CE;
+  background-color: #a1a1a5;
 }
 .card.fairy {
-  background-color: #D685AD;
+  background-color: #d6a1bb;
 }
 .card__info {
   height: 100%;
@@ -273,6 +278,108 @@ p {
 }
 .search__button:hover:enabled {
   border: 2px solid #B3A125;
+}
+
+.modal-background {
+  z-index: 100;
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .column-1, .modal .column-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+.modal .column-1 {
+  border-radius: 5px 5px 0 0;
+}
+.modal .column-1.grass {
+  background-color: #8bbe8a;
+}
+.modal .column-1.normal {
+  background-color: #b5b9c4;
+}
+.modal .column-1.fire {
+  background-color: #ffa756;
+}
+.modal .column-1.water {
+  background-color: #58abf6;
+}
+.modal .column-1.electric {
+  background-color: #f2cb55;
+}
+.modal .column-1.ice {
+  background-color: #91d8df;
+}
+.modal .column-1.fighting {
+  background-color: #f56767;
+}
+.modal .column-1.poison {
+  background-color: #9f6e97;
+}
+.modal .column-1.ground {
+  background-color: #f78551;
+}
+.modal .column-1.flying {
+  background-color: #eba8c3;
+}
+.modal .column-1.psychic {
+  background-color: #ff6568;
+}
+.modal .column-1.bug {
+  background-color: #8bd674;
+}
+.modal .column-1.rock {
+  background-color: #6f6e78;
+}
+.modal .column-1.ghost {
+  background-color: #8571be;
+}
+.modal .column-1.dragon {
+  background-color: #7383b9;
+}
+.modal .column-1.dark {
+  background-color: #806d61;
+}
+.modal .column-1.steel {
+  background-color: #a1a1a5;
+}
+.modal .column-1.fairy {
+  background-color: #d6a1bb;
+}
+.modal__content {
+  position: relative;
+  z-index: 150;
+  background-color: #ffffff;
+  opacity: none;
+  border-radius: 5px;
+}
+.modal__content__name {
+  text-transform: capitalize;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+.modal__content__sprite {
+  width: 150px;
+}
+.modal__content__stats__title {
+  font-weight: bold;
+}
+.modal__content__stats__container {
+  display: flex;
+}
+.modal__content__stats__container__stat {
+  text-transform: capitalize;
 }
 
 .pagination {

@@ -13,78 +13,7 @@
     background-image: url(../assets/images/watermark-pokeball.svg);
     background-repeat: no-repeat;
     background-position: center right;
-
-    &.grass {
-        background-color: #8bbe8a;
-    }
-    
-    &.normal {
-        background-color: #b5b9c4;
-    }
-    
-    &.fire {
-        background-color: #ffa756;
-    }
-    
-    &.water {
-        background-color: #58abf6;
-    }
-    
-    &.electric {
-        background-color: #f2cb55;
-    }
-    
-    &.ice {
-        background-color: #91d8df;
-    }
-    
-    &.fighting {
-        background-color: #f56767;
-    }
-    
-    &.poison {
-        background-color: #9f6e97;
-    }
-    
-    &.ground {
-        background-color: #f78551;
-    }
-    
-    &.flying {
-        background-color: #eba8c3;
-    }
-    
-    &.psychic {
-        background-color: #ff6568;
-    }
-    
-    &.bug {
-        background-color: #8bd674;
-    }
-    
-    &.rock {
-        background-color: #6f6e78;
-    }
-    
-    &.ghost {
-        background-color: #8571be;
-    }
-    
-    &.dragon {
-        background-color: #7383b9;
-    }
-    
-    &.dark {
-        background-color: $dark;
-    }
-    
-    &.steel {
-        background-color: $steel;
-    }
-    
-    &.fairy {
-        background-color: $fairy;
-    }
+    @include pokemonType;
 
     &__info {
         height: 100%;

@@ -1,4 +1,5 @@
 import React from "react";
+import { makeid } from "../functions/functions";
 
 const Card = ({ pokemonArr }) => {
 	// console.log(pokemonArr);
@@ -21,19 +22,6 @@ const Card = ({ pokemonArr }) => {
 									{pokeTypes.map((item) => {
 										const pokeType = item.type.name;
 
-										// Func to create unique ID for key
-										function makeid() {
-											let text = "";
-											const possible =
-												"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-											for (let i = 0; i < 5; i++)
-												text += possible.charAt(
-													Math.floor(Math.random() * possible.length)
-												);
-
-											return text;
-										}
 										return (
 											<p
 												className={`card__info__types__type ${pokeType}`}
