@@ -67,7 +67,10 @@ function App() {
 					<h1>Pokemon API App</h1>
 					<main>
 						<SearchPokemon getPokemon={getPokemon} />
-						<PokemonModal singlePokemonData={singlePokemon} />
+						{Object.keys(singlePokemon).length !== 0 ? (
+							<PokemonModal singlePokemonData={singlePokemon} />
+						) : null}
+
 						<Grid pokemonArr={pokemon} />
 					</main>
 					<div className="pagination">
