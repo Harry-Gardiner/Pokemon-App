@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { makeid } from "../functions/functions";
 
 const PokemonModal = ({ singlePokemonData }) => {
 	console.log(singlePokemonData);
@@ -28,7 +29,10 @@ const PokemonModal = ({ singlePokemonData }) => {
 							const statValue = s.base_stat;
 
 							return (
-								<div className="modal__content__stats__container">
+								<div
+									className="modal__content__stats__container"
+									key={makeid()}
+								>
 									<small className="modal__content__stats__container__stat">
 										{statName}:&nbsp;
 									</small>
