@@ -1,14 +1,12 @@
 import React from "react";
 import { makeid } from "../functions/functions";
 import PokemonData from "./Pokemon";
-const ComparePokemon = ({ compare }) => {
+const ComparePokemon = ({ compare, resetCompare }) => {
 	console.log(compare);
 	let pokemon1 = compare[0];
 	let pokemon2 = compare[1];
 	return (
 		<div className="compare">
-			<h2>Compare Pokemon</h2>
-			<small>Select 2 pokemon to compare by clicking the pokerball</small>
 			<div className="compare__container row">
 				<div className="column col-5">
 					<PokemonData pokemonObj={pokemon1} />
@@ -21,6 +19,9 @@ const ComparePokemon = ({ compare }) => {
 				<div className="column col-5">
 					<PokemonData pokemonObj={pokemon2} />
 				</div>
+			</div>
+			<div className="compare__reset">
+				<button onClick={resetCompare}>Reset Pokemon</button>
 			</div>
 		</div>
 	);

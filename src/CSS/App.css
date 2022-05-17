@@ -504,6 +504,23 @@ p {
 .compare__container .vs img {
   min-width: 100px;
 }
+.compare__reset {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.compare__reset button {
+  border: 2px solid #3B4CCA;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 0.5rem;
+  color: #CC0000;
+}
+.compare__reset button:hover {
+  background-color: #3B4CCA;
+  transform: scale(1.1);
+  color: #FF0000;
+}
 
 .pagination {
   display: flex;

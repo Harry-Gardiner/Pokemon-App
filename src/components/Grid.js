@@ -5,11 +5,15 @@ const Card = ({ pokemonArr, addFav, favs, addCompare, compare }) => {
 	// Extract ids from favs array in order to set fav star colour
 	let clickedArr = favs.map((a) => a.id);
 	const [clicked, setClicked] = useState(clickedArr);
+
+	// Extracrt ids from compare to set seleted
 	let compareArr = compare.map((a) => a.id);
-	const [selected, setSeleted] = useState(compare);
+	const [selected, setSeleted] = useState(compareArr);
+
 	// console.log(pokemonArr);
 	// console.log(clicked);
 	// console.log(clickedArr);
+
 	return (
 		<>
 			<div className="grid">

@@ -84,6 +84,11 @@ function App() {
 		setCompare([...compare, data]);
 	};
 
+	// Handler to reset compare
+	const resetCompare = () => {
+		setCompare([]);
+	};
+
 	// Run function each time URL is changed
 	useEffect(() => {
 		getPokemonData();
@@ -106,8 +111,10 @@ function App() {
 
 						<Favourites favs={favs} />
 
+						<h2>Compare Pokemon</h2>
+						<small>Select 2 pokemon by capturing the pokemon</small>
 						{Object.keys(compare).length > 1 ? (
-							<ComparePokemon compare={compare} />
+							<ComparePokemon compare={compare} resetCompare={resetCompare} />
 						) : null}
 
 						{Object.keys(singlePokemon).length !== 0 && showModal ? (
