@@ -175,6 +175,13 @@ p {
   color: rgba(0, 0, 0, 0.5019607843);
   font-weight: bold;
 }
+.card__info__fav {
+  width: 25px;
+  margin-left: 0.5rem;
+}
+.card__info__fav:hover {
+  transform: scale(1.1);
+}
 .card__info__name {
   text-transform: capitalize;
 }
@@ -286,6 +293,7 @@ p {
 }
 .fav__container__pokemon {
   text-align: center;
+  margin: 0 1rem;
 }
 .fav__container__pokemon img {
   width: 80px;

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeid } from "../functions/functions";
 
 const Card = ({ pokemonArr, addFav }) => {
+	const [clicked, setClicked] = useState([]);
 	// console.log(pokemonArr);
+	console.log(clicked);
 	return (
 		<>
 			<div className="grid">
@@ -12,20 +14,25 @@ const Card = ({ pokemonArr, addFav }) => {
 					const pokeName = pokemon.name;
 					const pokeSpirte = pokemon.sprites.front_default;
 					const pokeTypes = pokemon.types;
-
 					return (
 						<div className={`card ${pokeTypes[0].type.name}`} key={pokeId}>
 							<div className="card__info col-8">
-								<div>
+								<div className="d-flex align-items-center">
 									<small className="card__info__id"># {pokeId}</small>
-									<button
+									<img
+										src={
+											clicked.includes(pokeId)
+												? require("../assets/images/star-png-min.png")
+												: require("../assets/images/star-hollow.png")
+										}
+										alt="holow star"
 										onClick={() => {
 											// console.log("clicked");
 											addFav(pokeId);
+											setClicked([...clicked, pokeId]);
 										}}
-									>
-										Add Fav
-									</button>
+										className="card__info__fav"
+									/>
 								</div>
 								<h3 className="card__info__name">{pokeName}</h3>
 								<div className="card__info__types">
