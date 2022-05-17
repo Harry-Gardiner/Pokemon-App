@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { makeid } from "../functions/functions";
 
-const Card = ({ pokemonArr, addFav, favs, addCompare, compare }) => {
+const Card = ({
+	pokemonArr,
+	addFav,
+	favs,
+	addCompare,
+	compare,
+	getPokemon,
+}) => {
 	// Extract ids from favs array in order to set fav star colour
 	let clickedArr = favs.map((a) => a.id);
 	const [clicked, setClicked] = useState(clickedArr);
@@ -65,6 +72,18 @@ const Card = ({ pokemonArr, addFav, favs, addCompare, compare }) => {
 													? require("../assets/images/closed-pokeball-min.png")
 													: require("../assets/images/open-pokeball-min.png")
 											}
+											alt="pokeball img"
+											className="card__info__fav"
+										/>
+									</button>
+									<button
+										className="btn-stripped"
+										onClick={() => {
+											getPokemon(pokeName);
+										}}
+									>
+										<img
+											src={require("../assets/images/info-icon.png")}
 											alt=""
 											className="card__info__fav"
 										/>
