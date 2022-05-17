@@ -1,7 +1,7 @@
 import React from "react";
 import { makeid } from "../functions/functions";
 
-const Favourites = ({ favs }) => {
+const Favourites = ({ favs, resetFavs }) => {
 	// console.log(favs);
 	return (
 		<div className="fav">
@@ -17,6 +17,9 @@ const Favourites = ({ favs }) => {
 						</div>
 					);
 				})}
+			</div>
+			<div className="compare__reset">
+				<button onClick={resetFavs}>Reset favourites</button>
 			</div>
 		</div>
 	);

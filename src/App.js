@@ -89,6 +89,11 @@ function App() {
 		setCompare([]);
 	};
 
+	// Handler to reset favourites
+	const resetFavs = () => {
+		setFavs([]);
+	};
+
 	// Run function each time URL is changed
 	useEffect(() => {
 		getPokemonData();
@@ -109,7 +114,7 @@ function App() {
 					<main>
 						<SearchPokemon getPokemon={getPokemon} />
 
-						<Favourites favs={favs} />
+						<Favourites favs={favs} resetFavs={resetFavs} />
 
 						<h2>Compare Pokemon</h2>
 						<small>Select 2 pokemon by capturing the pokemon</small>
