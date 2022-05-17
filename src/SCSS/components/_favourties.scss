@@ -1,4 +1,6 @@
 .fav {
+    margin: $gap-md auto;
+    
     &__container {
         display: flex;
         flex-wrap: wrap;

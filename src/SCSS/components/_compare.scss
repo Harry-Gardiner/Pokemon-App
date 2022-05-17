@@ -1,0 +1,40 @@
+.compare {
+    margin: $gap-md auto;
+
+    &__container {
+        margin-top: $gap-sm;
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vs {
+            img {
+                min-width: 100px;
+            }
+        }
+    }
+
+    &__reset {
+        margin-top: $gap-sm;
+        display: flex;
+        justify-content: center;
+        
+        button {
+            border: 2px solid $blue;
+            border-radius: 5px;
+            background-color: $white;
+            padding: $gap-xs;
+            color: $red-secondary;
+
+            &:hover {
+                background-color: $blue;
+                transform: scale(1.1);
+                color: $red-primary;
+            }
+        }
+    }
+}

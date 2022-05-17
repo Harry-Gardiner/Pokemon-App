@@ -5,6 +5,7 @@ import Grid from "./components/Grid";
 import SearchPokemon from "./components/Search";
 import PokemonModal from "./components/Modal";
 import Favourites from "./components/Favourites";
+import ComparePokemon from "./components/Compare";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -20,6 +21,7 @@ function App() {
 		const initialValue = JSON.parse(saved);
 		return initialValue || [];
 	});
+	const [compare, setCompare] = useState([]);
 
 	// Get Pokemon data
 	const getPokemonData = async () => {
@@ -72,9 +74,20 @@ function App() {
 		// console.log(data);
 		setFavs([...favs, data]);
 	};
-
 	// console.log(favs);
 	// console.log(favs.length);
+
+	// Handler to add pokemon for comparison
+	const addToComapre = (id) => {
+		const data = pokemon.find((item) => item.id === id);
+		// console.log(data);
+		setCompare([...compare, data]);
+	};
+
+	// Handler to reset compare
+	const resetCompare = () => {
+		setCompare([]);
+	};
 
 	// Run function each time URL is changed
 	useEffect(() => {
@@ -98,6 +111,12 @@ function App() {
 
 						<Favourites favs={favs} />
 
+						<h2>Compare Pokemon</h2>
+						<small>Select 2 pokemon by capturing the pokemon</small>
+						{Object.keys(compare).length > 1 ? (
+							<ComparePokemon compare={compare} resetCompare={resetCompare} />
+						) : null}
+
 						{Object.keys(singlePokemon).length !== 0 && showModal ? (
 							<PokemonModal
 								singlePokemonData={singlePokemon}
@@ -105,7 +124,13 @@ function App() {
 							/>
 						) : null}
 
-						<Grid pokemonArr={pokemon} addFav={addToFavorite} favs={favs} />
+						<Grid
+							pokemonArr={pokemon}
+							addCompare={addToComapre}
+							compare={compare}
+							addFav={addToFavorite}
+							favs={favs}
+						/>
 
 						<div className="pagination">
 							<button
