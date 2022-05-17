@@ -6,7 +6,8 @@ const Favourites = ({ favs }) => {
 	return (
 		<div className="fav">
 			<h2>Favourites</h2>
-			{favs.length == 0 ? "No favourites selected" : ""}
+			<small>Select favourites by clicking the star</small>
+			<p>{favs.length == 0 ? "No favourites selected" : ""}</p>
 			<div className="fav__container">
 				{favs.map((pokemon) => {
 					return (

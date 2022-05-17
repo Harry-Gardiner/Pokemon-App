@@ -5,6 +5,7 @@ import Grid from "./components/Grid";
 import SearchPokemon from "./components/Search";
 import PokemonModal from "./components/Modal";
 import Favourites from "./components/Favourites";
+import ComparePokemon from "./components/Compare";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -97,6 +98,8 @@ function App() {
 						<SearchPokemon getPokemon={getPokemon} />
 
 						<Favourites favs={favs} />
+
+						<ComparePokemon />
 
 						{Object.keys(singlePokemon).length !== 0 && showModal ? (
 							<PokemonModal
