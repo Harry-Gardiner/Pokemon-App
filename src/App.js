@@ -135,6 +135,7 @@ function App() {
 							compare={compare}
 							addFav={addToFavorite}
 							favs={favs}
+							getPokemon={getPokemon}
 						/>
 
 						<div className="pagination">
