@@ -16,15 +16,17 @@ const Card = ({ pokemonArr, addFav }) => {
 					return (
 						<div className={`card ${pokeTypes[0].type.name}`} key={pokeId}>
 							<div className="card__info col-8">
-								<small className="card__info__id"># {pokeId}</small>
-								<button
-									onClick={() => {
-										// console.log("clicked");
-										addFav(pokeId);
-									}}
-								>
-									Add Fav
-								</button>
+								<div>
+									<small className="card__info__id"># {pokeId}</small>
+									<button
+										onClick={() => {
+											// console.log("clicked");
+											addFav(pokeId);
+										}}
+									>
+										Add Fav
+									</button>
+								</div>
 								<h3 className="card__info__name">{pokeName}</h3>
 								<div className="card__info__types">
 									{pokeTypes.map((item) => {

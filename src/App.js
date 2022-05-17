@@ -4,6 +4,7 @@ import "./CSS/App.css";
 import Grid from "./components/Grid";
 import SearchPokemon from "./components/Search";
 import PokemonModal from "./components/Modal";
+import Favourites from "./components/Favourites";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -68,6 +69,7 @@ function App() {
 	};
 
 	console.log(favs);
+	console.log(favs.length);
 
 	// Run function each time URL is changed
 	useEffect(() => {
@@ -83,13 +85,18 @@ function App() {
 					<h1>Pokemon API App</h1>
 					<main>
 						<SearchPokemon getPokemon={getPokemon} />
+
+						<Favourites favs={favs} />
+
 						{Object.keys(singlePokemon).length !== 0 && showModal ? (
 							<PokemonModal
 								singlePokemonData={singlePokemon}
 								setShowModal={handleModalState}
 							/>
 						) : null}
+
 						<Grid pokemonArr={pokemon} addFav={addToFavorite} />
+
 						<div className="pagination">
 							<button
 								type="button"
