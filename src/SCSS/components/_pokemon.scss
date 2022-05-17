@@ -5,13 +5,16 @@
     width: 100%;
     max-width: 300px;
     padding: $gap-xs;
+    @media (min-width: 576px) {
+        padding: $gap-md;
+    }
     border-radius: 5px;
     @include pokemonType;
     max-width: 300px;
     background-image: url(../assets/images/watermark-pokeball.svg);
     background-repeat:space;
     background-position: left;
-
+  
     &__name {
         text-transform: capitalize;
         // font-family: 'PokemonSolid';

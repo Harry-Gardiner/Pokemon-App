@@ -22,40 +22,5 @@
     .column-1 {
         border-radius: 5px 5px 0 0;
         @include pokemonType;
-    }
-
-    &__content {
-        position: relative;
-        z-index: 150;
-        background-color: $white;
-        opacity: none;
-        border-radius: 5px;
-
-        &__name {
-            text-transform: capitalize;
-            color: $white;
-            margin-bottom: $gap-sm;
-        }
-
-        &__sprite {
-            width: 150px;
-        }
-
-        &__stats {
-            &__title {
-                font-weight: bold;
-            }
-
-            &__container {
-                display: flex;
-
-                &__stat {
-                    text-transform: capitalize;
-                }
-            }
-            
-        }
-    }
-
-    
+    }    
 }

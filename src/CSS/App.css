@@ -277,6 +277,11 @@ p {
   background-repeat: space;
   background-position: left;
 }
+@media (min-width: 576px) {
+  .pokemon-single {
+    padding: 2rem;
+  }
+}
 .pokemon-single.grass {
   background-color: #8bbe8a;
 }
@@ -482,30 +487,6 @@ p {
 }
 .modal .column-1.fairy {
   background-color: #d6a1bb;
-}
-.modal__content {
-  position: relative;
-  z-index: 150;
-  background-color: #ffffff;
-  opacity: none;
-  border-radius: 5px;
-}
-.modal__content__name {
-  text-transform: capitalize;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-.modal__content__sprite {
-  width: 150px;
-}
-.modal__content__stats__title {
-  font-weight: bold;
-}
-.modal__content__stats__container {
-  display: flex;
-}
-.modal__content__stats__container__stat {
-  text-transform: capitalize;
 }
 
 .compare {
