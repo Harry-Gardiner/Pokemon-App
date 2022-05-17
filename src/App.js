@@ -106,7 +106,9 @@ function App() {
 
 						<Favourites favs={favs} />
 
-						<ComparePokemon compare={compare} />
+						{Object.keys(compare).length > 1 ? (
+							<ComparePokemon compare={compare} />
+						) : null}
 
 						{Object.keys(singlePokemon).length !== 0 && showModal ? (
 							<PokemonModal
