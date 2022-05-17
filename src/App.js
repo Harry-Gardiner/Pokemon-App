@@ -12,6 +12,7 @@ function App() {
 	const [url, setUrl] = useState(["https://pokeapi.co/api/v2/pokemon/"]);
 	const [nextUrl, setNextUrl] = useState();
 	const [prevUrl, setPrevUrl] = useState();
+	const [showModal, setShowModal] = useState(false);
 
 	// Get Pokemon data
 	const getPokemonData = async () => {
@@ -45,18 +46,25 @@ function App() {
 				);
 				// console.log(singleRes);
 				setSinglePokemon(singleRes.data);
+				setShowModal(true);
 			} catch (error) {
 				console.log(error.response.data.error);
 				alert(`Pokemon ${name} not Found. Please check spelling`);
 			}
 	};
 
+	// Handle modal state change
+	const handleModalState = () => {
+		setShowModal(false);
+		// console.log("clicked");
+	};
+
+	console.log(showModal);
+
 	// Run function each time URL is changed
 	useEffect(() => {
 		getPokemonData();
 	}, [url]);
-
-	console.log(singlePokemon);
 
 	if (loading) return "Loading...";
 
@@ -67,10 +75,12 @@ function App() {
 					<h1>Pokemon API App</h1>
 					<main>
 						<SearchPokemon getPokemon={getPokemon} />
-						{Object.keys(singlePokemon).length !== 0 ? (
-							<PokemonModal singlePokemonData={singlePokemon} />
+						{Object.keys(singlePokemon).length !== 0 && showModal ? (
+							<PokemonModal
+								singlePokemonData={singlePokemon}
+								setShowModal={handleModalState}
+							/>
 						) : null}
-
 						<Grid pokemonArr={pokemon} />
 					</main>
 					<div className="pagination">

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeid } from "../functions/functions";
 
-const PokemonModal = ({ singlePokemonData }) => {
-	console.log(singlePokemonData);
+const PokemonModal = ({ singlePokemonData, setShowModal }) => {
+	// console.log(singlePokemonData);
 	const p = singlePokemonData;
 
 	return (
-		<>
+		<div onClick={setShowModal}>
 			<div className="modal-background"></div>
 			<div className="modal">
 				<div className="modal__content">
@@ -45,7 +45,7 @@ const PokemonModal = ({ singlePokemonData }) => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
