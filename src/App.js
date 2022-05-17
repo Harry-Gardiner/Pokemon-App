@@ -68,8 +68,8 @@ function App() {
 		setFavs([...favs, data]);
 	};
 
-	console.log(favs);
-	console.log(favs.length);
+	// console.log(favs);
+	// console.log(favs.length);
 
 	// Run function each time URL is changed
 	useEffect(() => {
