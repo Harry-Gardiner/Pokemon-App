@@ -4,6 +4,7 @@ import "./CSS/App.css";
 import Grid from "./components/Grid";
 import SearchPokemon from "./components/Search";
 import PokemonModal from "./components/Modal";
+import Favourites from "./components/Favourites";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -13,6 +14,12 @@ function App() {
 	const [nextUrl, setNextUrl] = useState();
 	const [prevUrl, setPrevUrl] = useState();
 	const [showModal, setShowModal] = useState(false);
+	const [favs, setFavs] = useState(() => {
+		// getting local stored array
+		const saved = localStorage.getItem("Favpokemon");
+		const initialValue = JSON.parse(saved);
+		return initialValue || [];
+	});
 
 	// Get Pokemon data
 	const getPokemonData = async () => {
@@ -59,10 +66,25 @@ function App() {
 		// console.log("clicked");
 	};
 
+	// Handler to add pokemon to favs
+	const addToFavorite = (id) => {
+		const data = pokemon.find((item) => item.id === id);
+		// console.log(data);
+		setFavs([...favs, data]);
+	};
+
+	// console.log(favs);
+	// console.log(favs.length);
+
 	// Run function each time URL is changed
 	useEffect(() => {
 		getPokemonData();
 	}, [url]);
+
+	useEffect(() => {
+		// storing input name
+		localStorage.setItem("Favpokemon", JSON.stringify(favs));
+	}, [favs]);
 
 	if (loading) return "Loading...";
 
@@ -73,38 +95,43 @@ function App() {
 					<h1>Pokemon API App</h1>
 					<main>
 						<SearchPokemon getPokemon={getPokemon} />
+
+						<Favourites favs={favs} />
+
 						{Object.keys(singlePokemon).length !== 0 && showModal ? (
 							<PokemonModal
 								singlePokemonData={singlePokemon}
 								setShowModal={handleModalState}
 							/>
 						) : null}
-						<Grid pokemonArr={pokemon} />
+
+						<Grid pokemonArr={pokemon} addFav={addToFavorite} favs={favs} />
+
+						<div className="pagination">
+							<button
+								type="button"
+								onClick={() => {
+									// console.log("clicked prev");
+									setPokemon([]); // Reset pokemon data
+									setUrl(prevUrl);
+								}}
+								disabled={prevUrl === null ? true : false}
+							>
+								Previous
+							</button>
+							<button
+								type="button"
+								onClick={() => {
+									// console.log("clicked next");
+									setPokemon([]); // Reset pokemon data
+									setUrl(nextUrl);
+								}}
+								disabled={nextUrl === null ? true : false}
+							>
+								Next
+							</button>
+						</div>
 					</main>
-					<div className="pagination">
-						<button
-							type="button"
-							onClick={() => {
-								// console.log("clicked prev");
-								setPokemon([]); // Reset pokemon data
-								setUrl(prevUrl);
-							}}
-							disabled={prevUrl === null ? true : false}
-						>
-							Previous
-						</button>
-						<button
-							type="button"
-							onClick={() => {
-								// console.log("clicked next");
-								setPokemon([]); // Reset pokemon data
-								setUrl(nextUrl);
-							}}
-							disabled={nextUrl === null ? true : false}
-						>
-							Next
-						</button>
-					</div>
 				</div>
 			</div>
 		);
