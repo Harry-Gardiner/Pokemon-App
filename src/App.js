@@ -59,8 +59,6 @@ function App() {
 		// console.log("clicked");
 	};
 
-	console.log(showModal);
-
 	// Run function each time URL is changed
 	useEffect(() => {
 		getPokemonData();

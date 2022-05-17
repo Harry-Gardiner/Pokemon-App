@@ -34,10 +34,11 @@
         &__name {
             text-transform: capitalize;
             color: $white;
+            margin-bottom: $gap-sm;
         }
 
         &__sprite {
-            min-width: 100px;
+            width: 150px;
         }
 
         &__stats {

@@ -367,9 +367,10 @@ p {
 .modal__content__name {
   text-transform: capitalize;
   color: #ffffff;
+  margin-bottom: 1rem;
 }
 .modal__content__sprite {
-  min-width: 100px;
+  width: 150px;
 }
 .modal__content__stats__title {
   font-weight: bold;
