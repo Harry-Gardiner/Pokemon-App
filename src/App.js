@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "./axios";
 import "./CSS/App.css";
+import { setPokemonData } from "./functions/functions";
 import Grid from "./components/Grid";
 import SearchPokemon from "./components/Search";
 import PokemonModal from "./components/Modal";
