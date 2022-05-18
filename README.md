@@ -2,8 +2,6 @@
 
 Pokemon app completed as part of the 3SC technical challenge. Built using React, bootstrap.css and sass.
 
-View the app [here](https://harry-gardiner.github.io/Sort-it-team-picker/).
-
 Contents:
 
 - [**Pokemon API App**](#Pokemon-API-App)

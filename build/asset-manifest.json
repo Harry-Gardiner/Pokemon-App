@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.6ae3b8f2.css",
-    "main.js": "/static/js/main.57c31b5c.js",
-    "static/media/star-png-min.png": "/static/media/star-png-min.84f1f89bd34366655864.png",
-    "static/media/info-icon.png": "/static/media/info-icon.403d1a4719251bd47c8d.png",
-    "static/media/closed-pokeball-min.png": "/static/media/closed-pokeball-min.0b84998ef14d0ff74686.png",
-    "static/media/star-hollow.png": "/static/media/star-hollow.612514e48173982d20c7.png",
-    "static/media/Pokemon_Hollow.ttf": "/static/media/Pokemon_Hollow.47f77ce9939c5330492b.ttf",
-    "static/media/open-pokeball-min.png": "/static/media/open-pokeball-min.d3695b99e8a41aef3f14.png",
-    "static/media/Pokemon_Solid.ttf": "/static/media/Pokemon_Solid.5d60be1f7ff5fcc21fc1.ttf",
-    "static/media/watermark-pokeball.svg": "/static/media/watermark-pokeball.3516e4b879127c02fbdd.svg",
-    "index.html": "/index.html",
-    "main.6ae3b8f2.css.map": "/static/css/main.6ae3b8f2.css.map",
-    "main.57c31b5c.js.map": "/static/js/main.57c31b5c.js.map"
+    "main.css": "/Pokemon-App/static/css/main.7e15d08f.css",
+    "main.js": "/Pokemon-App/static/js/main.965d2b68.js",
+    "static/media/star-png-min.png": "/Pokemon-App/static/media/star-png-min.84f1f89bd34366655864.png",
+    "static/media/info-icon.png": "/Pokemon-App/static/media/info-icon.403d1a4719251bd47c8d.png",
+    "static/media/closed-pokeball-min.png": "/Pokemon-App/static/media/closed-pokeball-min.0b84998ef14d0ff74686.png",
+    "static/media/star-hollow.png": "/Pokemon-App/static/media/star-hollow.612514e48173982d20c7.png",
+    "static/media/Pokemon_Hollow.ttf": "/Pokemon-App/static/media/Pokemon_Hollow.47f77ce9939c5330492b.ttf",
+    "static/media/open-pokeball-min.png": "/Pokemon-App/static/media/open-pokeball-min.d3695b99e8a41aef3f14.png",
+    "static/media/Pokemon_Solid.ttf": "/Pokemon-App/static/media/Pokemon_Solid.5d60be1f7ff5fcc21fc1.ttf",
+    "static/media/watermark-pokeball.svg": "/Pokemon-App/static/media/watermark-pokeball.3516e4b879127c02fbdd.svg",
+    "index.html": "/Pokemon-App/index.html",
+    "main.7e15d08f.css.map": "/Pokemon-App/static/css/main.7e15d08f.css.map",
+    "main.965d2b68.js.map": "/Pokemon-App/static/js/main.965d2b68.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ae3b8f2.css",
-    "static/js/main.57c31b5c.js"
+    "static/css/main.7e15d08f.css",
+    "static/js/main.965d2b68.js"
   ]
 }
