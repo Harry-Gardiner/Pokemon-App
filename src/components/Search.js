@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 
+/**
+ * Component handling the search input
+ *
+ * Takes an array of objects
+ */
 const SearchPokemon = ({ getPokemon }) => {
 	const [value, setValue] = useState(""); // set initial value of search input
 
+	// Track input
 	const handleChange = (e) => {
 		setValue(e.currentTarget.value.toLowerCase());
 		// value needs to be lowercase to match API format
 	};
 
+	// Pass up pokemon value and clear input
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		getPokemon(value);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "./axios";
 import "./CSS/App.css";
 import Grid from "./components/Grid";
 import SearchPokemon from "./components/Search";
@@ -11,7 +11,7 @@ function App() {
 	const [loading, setLoading] = useState(true);
 	const [pokemon, setPokemon] = useState([]);
 	const [singlePokemon, setSinglePokemon] = useState({});
-	const [url, setUrl] = useState(["https://pokeapi.co/api/v2/pokemon/"]);
+	const [url, setUrl] = useState(axios.baseUrl);
 	const [nextUrl, setNextUrl] = useState();
 	const [prevUrl, setPrevUrl] = useState();
 	const [showModal, setShowModal] = useState(false);
@@ -50,9 +50,7 @@ function App() {
 	const getPokemon = async (name) => {
 		if (!name == "")
 			try {
-				const singleRes = await axios.get(
-					`https://pokeapi.co/api/v2/pokemon/${name}`
-				);
+				const singleRes = await axios.get(name);
 				// console.log(singleRes);
 				setSinglePokemon(singleRes.data);
 				setShowModal(true);
@@ -99,6 +97,7 @@ function App() {
 		getPokemonData();
 	}, [url]);
 
+	// Update fav pokemon each time favs is changed
 	useEffect(() => {
 		// storing input name
 		localStorage.setItem("Favpokemon", JSON.stringify(favs));

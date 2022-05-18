@@ -1,7 +1,11 @@
-import React, { useState } from "react";
-import { makeid } from "../functions/functions";
+import React from "react";
 import PokemonData from "./Pokemon";
 
+/**
+ * Component handling the display of a single pokemon in a modal format
+ *
+ * Takes an object
+ */
 const PokemonModal = ({ singlePokemonData, setShowModal }) => {
 	// console.log(singlePokemonData);
 	const p = singlePokemonData;

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { makeid } from "../functions/functions";
 
+/**
+ * Component handling the grid layout of pokemon
+ *
+ * Takes an array of objects
+ */
 const Card = ({
 	pokemonArr,
 	addFav,
@@ -11,27 +15,25 @@ const Card = ({
 }) => {
 	// Extract ids from favs array in order to set fav star colour
 	let clickedArr = favs.map((a) => a.id);
-	const [clicked, setClicked] = useState(clickedArr);
 
 	// Extracrt ids from compare to set seleted
 	let compareArr = compare.map((a) => a.id);
-	const [selected, setSeleted] = useState(compareArr);
 
 	// console.log(pokemonArr);
-	// console.log(clicked);
 	// console.log(clickedArr);
+	// console.log(compareArr);
 
 	return (
 		<>
 			<div className="grid">
-				{pokemonArr.map((pokemon) => {
-					// console.log(pokemon.types);
+				{pokemonArr.map((pokemon, i) => {
 					const pokeId = pokemon.id;
 					const pokeName = pokemon.name;
 					const pokeSpirte = pokemon.sprites.front_default;
 					const pokeTypes = pokemon.types;
+
 					return (
-						<div className={`card ${pokeTypes[0].type.name}`} key={pokeId}>
+						<div className={`card ${pokeTypes[0].type.name}`} key={i}>
 							<div className="card__info col-8">
 								<div className="d-flex align-items-center">
 									<small className="card__info__id"># {pokeId}</small>
@@ -40,12 +42,11 @@ const Card = ({
 										onClick={() => {
 											// console.log("clicked");
 											addFav(pokeId);
-											setClicked([...clicked, pokeId]);
 										}}
 									>
 										<img
 											src={
-												clicked.includes(pokeId)
+												clickedArr.includes(pokeId)
 													? require("../assets/images/star-png-min.png")
 													: require("../assets/images/star-hollow.png")
 											}
@@ -56,14 +57,13 @@ const Card = ({
 									<button
 										className="btn-stripped"
 										disabled={
-											compare.length > 1 && !selected.includes(pokeId)
+											compare.length > 1 && !compareArr.includes(pokeId)
 												? true
 												: false
 										}
 										onClick={() => {
 											// console.log("clicked");
 											addCompare(pokeId);
-											setSeleted([...selected, pokeId]);
 										}}
 									>
 										<img
@@ -91,13 +91,13 @@ const Card = ({
 								</div>
 								<h3 className="card__info__name">{pokeName}</h3>
 								<div className="card__info__types">
-									{pokeTypes.map((item) => {
+									{pokeTypes.map((item, i) => {
 										const pokeType = item.type.name;
 
 										return (
 											<p
 												className={`card__info__types__type ${pokeType}`}
-												key={makeid()}
+												key={i}
 											>
 												{pokeType}
 											</p>

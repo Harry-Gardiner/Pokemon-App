@@ -1,6 +1,12 @@
 import React from "react";
-import { makeid } from "../functions/functions";
+
+/**
+ * Component handling the layout of a single pokemons info
+ *
+ * Takes an single objects
+ */
 const PokemonData = ({ pokemonObj }) => {
+	// console.log(pokemonObj);
 	const p = pokemonObj;
 	return (
 		<div className={`pokemon-single ${p.types[0].type.name}`}>
@@ -15,12 +21,12 @@ const PokemonData = ({ pokemonObj }) => {
 				alt={p.name}
 			/>
 			<p className="pokemon-single__stat-title">Base Stats</p>
-			{p.stats.map((s) => {
+			{p.stats.map((s, i) => {
 				const statName = s.stat.name;
 				const statValue = s.base_stat;
 
 				return (
-					<div className="pokemon-single__stats__container" key={makeid()}>
+					<div className="pokemon-single__stats__container" key={i}>
 						<small className="pokemon-single__stats__stat">
 							{statName}:&nbsp;
 						</small>

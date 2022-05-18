@@ -1,8 +1,13 @@
 import React from "react";
-import { makeid } from "../functions/functions";
 import PokemonData from "./Pokemon";
+
+/**
+ * Component handling the compare layout
+ *
+ * Takes an array of objects
+ */
 const ComparePokemon = ({ compare, resetCompare }) => {
-	console.log(compare);
+	// console.log(compare);
 	let pokemon1 = compare[0];
 	let pokemon2 = compare[1];
 	return (
